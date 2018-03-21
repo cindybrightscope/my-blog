@@ -1,0 +1,60 @@
+.page-header {
+    background-color: #90C3D4;
+    margin-top: 0;
+    padding: 20px 20px 20px 550px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 55pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 125px;;
+    background-color: #DEEFFA;
+}
+
+h1 {
+    font-family: 'Tangerine', cursive;
+    text-shadow: 4px 4px 4px #B9DAF0;
+}
+
+h2, h3, h4 {
+    font-family: 'Tangerine', cursive;
+}
+
+.date {
+    color: #748A8A;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #DEEFFA;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #165178;
+}
+
+.post p, .post p:visited {
+    background-color: #D0E2F5;
+}
+
+.comment p, .post p:visited {
+    background-color: #D0E2F5;
+}
