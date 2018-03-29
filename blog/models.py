@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 
 
 class MyUser(User):
-    #is_logged_in_user = models.BooleanField(default=False)
     is_writer = models.BooleanField(default=False)
     is_editor = models.BooleanField(default=False)
     is_logged_in_user = models.BooleanField(default=False)
@@ -15,6 +14,12 @@ class MyUser(User):
             ('create_article', 'Can create article'),
             ('publish_article', 'Can publish article'),
         )
+
+    def writer_status(self):
+        return self.is_writer
+
+    def editor_status(self):
+        return self.is_editor
 
 
 class Article(models.Model):
