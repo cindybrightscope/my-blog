@@ -13,7 +13,7 @@ class Command(BaseCommand):
     article_list = []
 
     def populate_user(self):
-        for i in range(1, 6):
+        for i in range(1, 20):
             user = self.create_user(i)
             user.save()
 
@@ -36,13 +36,13 @@ class Command(BaseCommand):
             self.login_user_list.append(user)
 
     def create_user(self, index):
-        if index <= 30:
+        if index <= 5:
             my_user, created = MyUser.objects.get_or_create(username='LoggedInUser{}'.format(index),
                                                             password='TestingUserPw{}'.format(index),
                                                             email='TestUser{}@fakeemail.com'.format(index),
                                                             is_logged_in_user=True
                                                             )
-        elif 30 < index <= 60:
+        elif 5 < index <= 10:
             my_user, created = MyUser.objects.get_or_create(username='WriterUser{}'.format(index),
                                                             password='TestingUserPw{}'.format(index),
                                                             email='TestUser{}@fakeemail.com'.format(index),
@@ -57,7 +57,7 @@ class Command(BaseCommand):
         return my_user
 
     def create_article(self):
-        for i in range(1, 3):
+        for i in range(1, 5):
             article = Article.objects.create(writer=random.choice(self.writer_list),
                                              editor=random.choice(self.editor_list),
                                              title='Test Title{}'.format(i),
@@ -67,7 +67,7 @@ class Command(BaseCommand):
             article.save()
 
     def create_comment(self):
-        for i in range(1, 5):
+        for i in range(1, 8):
             comment = Comment.objects.create(article=random.choice(self.article_list),
                                              author=random.choice(self.login_user_list),
                                              text='Test comment {}'.format(i))
