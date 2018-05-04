@@ -15,7 +15,7 @@ def post_list(request):
 def post_detail(request, pk):
     post = get_object_or_404(Article, pk=pk)
     comments = Comment.objects.filter(article=post, approved_comment=True)
-    return render(request, 'blog/post_detail.html', {'post': post,
+    return render(request, 'blog/post_detail.html', {'components': post,
                                                      'comments': comments,
                                                      })
 
